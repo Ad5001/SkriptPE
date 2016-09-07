@@ -109,7 +109,20 @@ class Skript implements Listener {
 					
 					$this->event[] = new Event($this, $key, $code);
 					
-				}
+				} else {
+
+                    $found = false;
+
+                    foreach(Event::PREGEVENTS as $ev) {
+
+                        if(!is_null(preg_replace($ev, "$1", $key)) and !$found) {
+
+                            $this->event[] = new Event($this, $key, $code);
+
+                            $found = true;
+                        }
+                    }
+                }
 				
 				break;
 				
