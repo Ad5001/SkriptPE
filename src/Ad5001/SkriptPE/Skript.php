@@ -122,6 +122,15 @@ class Skript implements Listener {
                             $found = true;
                         }
                     }
+
+                    if(!$found) {
+						if(!isset(Event::NOTIMPLEMENTED[$key])) {
+							$this->getLogger()->warning("Unknown event: $event");
+						} else {
+							$this->getLogger()->notice("The event " . Event::NOTIMPLEMENTED[$key] . "has not been implemented YET in MCPE. Please wait until it's added to register this in your code. (Everything else in your code WILL work).");
+						}
+                    }
+                    
                 }
 				
 				break;
