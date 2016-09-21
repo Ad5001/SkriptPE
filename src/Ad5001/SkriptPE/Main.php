@@ -16,7 +16,7 @@ use Ad5001\SkriptPE\dummy2;
 use Ad5001\SkriptPE\dummy1;
 
 
-class Main extends PluginBase{
+class Main extends PluginBase implements Listener{
 
 
     private $skrips;
